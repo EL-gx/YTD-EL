@@ -12,14 +12,14 @@ const downloadFile = (url) => {
 };
 
 const getData = async (url) => {
-  errorMessage.style.color = "blue";
+  errorMessage.style.color = "yellow";
   errorMessage.textContent = 'Fetching data, please wait...';
   try {
     const res = await fetch(`https://haji-mix-api.gleeze.com/api/ytdl?url=${url}`);
     const data = await res.json();
     if (data && data.youtube) {
       errorMessage.style.color = "green";
-      errorMessage.textContent = 'Download starting...';
+      errorMessage.textContent = 'Download started...';
       downloadFile(data.youtube);
     } else {
       errorMessage.style.color = "red";
