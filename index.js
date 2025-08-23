@@ -2,19 +2,33 @@ const dlButton = document.getElementById("dl");
 const urlInput = document.getElementById("urlIn");
 const errorMessage = document.getElementById('errorMessage');
 
+const downloadFile = (url) => {
+  const link = document.createElement('a');
+  link.href = url;
+  link.setAttribute('download', '');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 const getData = async (url) => {
+  errorMessage.style.color = "blue";
+  errorMessage.textContent = 'Fetching data, please wait...';
   try {
     const res = await fetch(`https://haji-mix-api.gleeze.com/api/ytdl?url=${url}`);
     const data = await res.json();
     if (data && data.youtube) {
-      downloadFile(data.youtube);
       errorMessage.style.color = "green";
-      errorMessage.textContent = 'Downloading Please wait...'
+      errorMessage.textContent = 'Download starting...';
+      downloadFile(data.youtube);
     } else {
-      errorMessage.textContent = data.error;
+      errorMessage.style.color = "red";
+      errorMessage.textContent = data.error || 'An unknown error occurred.';
     }
   } catch (err) {
     console.error(err);
+    errorMessage.style.color = "red";
+    errorMessage.textContent = 'Failed to fetch data. Please check the URL.';
   }
 };
 
@@ -23,6 +37,7 @@ dlButton.addEventListener('click', () => {
     if (url) {
         getData(url);
     } else {
-        errorMessage.textContent = 'Please Enter a Link'
+        errorMessage.style.color = "red";
+        errorMessage.textContent = 'Please Enter a Link.';
     }
 });
