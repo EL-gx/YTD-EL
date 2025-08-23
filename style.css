@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Sans-Serif;
+    font-family: Roboto, Sans-Serif;
     scroll-behavior: smooth;
 }
 body {
@@ -11,35 +11,33 @@ body {
 
 @keyframes rotate {
     0% {
-        background-image: linear-gradient(45deg, black, red);
+        background-image: linear-gradient(45deg, #117a7c, #145424);
         background-position: 0% 50%;
     }
     50% {
-        background-image: linear-gradient(45deg, black, red);
-        background-position: 100% 100%;
+        background-image: linear-gradient(45deg, #117a7c, #145424);
+        background-position: 100% 0%;
     }
     100% {
-        background-image: linear-gradient(45deg, black, red);
+        background-image: linear-gradient(45deg, #117a7c, #145424 );
         background-position: 0% 50%;
     }
 }
 
 span {
-    color: red;
+    color:  #145424;
 }
 
 .nav {
     position: fixed;
     width: 100%;
-    background-color: hsl(0 0% 95%);
-    height: 40px;
-
+    background-color: hsl(0 0% 90%);
+    height: 35px;
 }
 
 .navdiv {
-  display: flex;
-  align-items: center;
-  border: 3px solid black;
+    display: flex;
+    align-items: center;
 }
 
 .logo {
@@ -70,10 +68,9 @@ span {
     align-items: center;
     width: 100%;
     height: 330px;
-    animation: rotate 10s linear infinite;
+    animation: rotate 5s linear infinite;
     background-size: 400% 400%;
     margin-bottom: 20px;
-    z-index: 1;
 }
 
 .int {
@@ -121,21 +118,24 @@ span {
     font-size: 20px;
 }
 
-.pers li {
-    margin-top: 20px;
-    font-size: 20px;
-}
-
 .info {
-    margin-top: 80px;
+    margin-top: 60px;
     text-align: center;
 }
 
-.pers {
-    margin-top: 80px;
-    text-align: center;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+.fuh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  font-size: 20px;
+}
+
+
+.fuh a {
+  color: #145424;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 footer {
@@ -145,5 +145,6 @@ footer {
     justify-content: center;
     align-items: center;
     height: 40px;
-    background-color: hsl(0 0% 80%);
+    background-color: hsl(0 0% 95%);
 }
+
