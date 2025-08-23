@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Sans-Serif;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+}
+
+@keyframes rotate {
+    0% {
+        background-image: linear-gradient(45deg, black, red);
+        background-position: 0% 50%;
+    }
+    50% {
+        background-image: linear-gradient(45deg, black, red);
+        background-position: 100% 100%;
+    }
+    100% {
+        background-image: linear-gradient(45deg, black, red);
+        background-position: 0% 50%;
+    }
+}
+
+span {
+    color: red;
+}
+
+.nav {
+    position: fixed;
+    width: 100%;
+    background-color: hsl(0 0% 95%);
+    height: 40px;
+
+}
+
+.navdiv {
+  display: flex;
+  align-items: center;
+  border: 3px solid black;
+}
+
+.logo {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.EL {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.head {
+    color: white;
+    padding-top: 40px;
+}
+
+.head h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 330px;
+    animation: rotate 10s linear infinite;
+    background-size: 400% 400%;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.int {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#errorMessage {
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+    font-size: 20px;
+}
+
+#urlIn {
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    padding-left: 30px;
+}
+
+#dl {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #057d23;
+    cursor: pointer;
+}
+
+#urlIn,
+#dl {
+    height: 45px;
+    width: 380px;
+}
+
+.info p {
+    font-size: 20px;
+}
+
+.pers li {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.info {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.pers {
+    margin-top: 80px;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+footer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: hsl(0 0% 80%);
+}
