@@ -2,6 +2,8 @@ const dlButton = document.getElementById("dl");
 const urlInput = document.getElementById("urlIn");
 const errorMessage = document.getElementById("errorMessage");
 
+const apiKey = '6cd32093cf2e408a8c2cd15336fd3042b786da13a11188460558f3610e27d695';
+
 const downloadFile = url => {
     const link = document.createElement("a");
     link.href = url;
@@ -12,16 +14,16 @@ const downloadFile = url => {
 };
 
 const getData = async url => {
-    errorMessage.style.color = "yellow";
+    errorMessage.style.color = "white";
     errorMessage.textContent = "Fetching data, please wait...";
     try {
         const res = await fetch(
-            `https://haji-mix-api.gleeze.com/api/ytdl?url=${url}`
+            `https://haji-mix-api.gleeze.com/api/ytdl?url=${url}&api_key=${apiKey}`
         );
         const data = await res.json();
         if (data && data.youtube) {
             errorMessage.style.color = "green";
-            errorMessage.textContent = "Download starting...";
+            errorMessage.textContent = "Download started...";
             downloadFile(data.youtube);
         } else {
             errorMessage.style.color = "red";
