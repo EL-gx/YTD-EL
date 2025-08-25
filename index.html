@@ -6,7 +6,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>YT-DL</title>
         <link rel="stylesheet" href="style.css" />
-        <script src="index.js" defer></script>
     </head>
     <body>
         <nav class="nav">
@@ -14,8 +13,22 @@
                 <div class="logo">
                     <a class="EL" href="#"><span>YT</span>D'EL</a>
                 </div>
+                <div class="dm">
+                    <img
+                        src="darkMode.png"
+                        id="darkMode"
+                        class="theme-icon"
+                    />
+                    <img
+                        src="lightMode.png"
+                        id="lightMode"
+                        class="theme-icon"
+                        style="display: none"
+                    />
+                </div>
             </div>
         </nav>
+
         <div class="container">
             <div class="head">
                 <h1>YouTube Video Downloader</h1>
@@ -65,14 +78,27 @@
         </div>
         <div class="fuh">
             <p>
-                Developed by
+                Made by
                 <a href="https://www.facebook.com/eldwincabanilla">EL</a>
             </p>
         </div>
         <footer>
-            <div clas>
+            <div>
                 <p>&copy2025 YTD'EL - All rights reserved</p>
             </div>
         </footer>
+        <script>
+            const dmSwitch = document.querySelector(".dm");
+            const darkModeIcon = document.getElementById("darkMode");
+            const lightModeIcon = document.getElementById("lightMode");
+
+            dmSwitch.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                darkModeIcon.style.display = document.body.classList.contains("dark-mode") ? "none" : "block";
+                
+                lightModeIcon.style.display = document.body.classList.contains("dark-mode") ? "block" : "none";
+            });
+        </script>
+        <script src="index.js"></script>
     </body>
 </html>
